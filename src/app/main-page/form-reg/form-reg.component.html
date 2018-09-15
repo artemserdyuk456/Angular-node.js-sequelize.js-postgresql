@@ -1,0 +1,216 @@
+<div class="container" *ngIf="!userIsAuthenticated">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div>
+        <form [formGroup]="regestForm" (ngSubmit)="onSubmit()">
+          <div
+            class="sign-up-form"
+            id="content-form">
+            <div class="form-group">
+              <ul>
+                <li class="li-user-name">
+                  <label class="label-user-name" for="user">User name</label>
+                  <input
+                    type="text"
+                    class="form-control user-name"
+                    id="user"
+                    formControlName="userName">
+
+                  <span class="help-block"
+                  *ngIf="!regestForm.get('userName').valid && regestForm.get('userName').touched"
+                  >Please enter your name!</span>
+                </li>
+                <li class="li-email">
+                  <label class="second-label" for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control email"
+                    id="email"
+                    formControlName="email">
+
+                  <span class="help-block"
+                  *ngIf="!regestForm.get('email').valid && regestForm.get('email').touched"
+                  >Please enter email!</span>
+                </li>
+                <li class="li-password">
+                  <label class="label-password" for="password">Password</label>
+                  <input
+                    type="password"
+                    class="form-control password"
+                    id="password"
+                    formControlName="password">
+
+                  <span  class="help-block"
+                  *ngIf="!regestForm.get('password').valid && regestForm.get('password').touched"
+                  >Please enter your password!</span>
+                </li>
+                <li class="group li-date">
+                <li class="li-date-day">
+                  <label class="fourth-label" for="date-day">Date of Birth</label>
+                  <select
+                    class="form-control date-day"
+                    id="date-day"
+                    formControlName="dateDay">
+                    <option>01</option>
+                    <option>02</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                  </select>
+                </li>
+                <li>
+                  <select
+                    class="form-control date-month"
+                    id="date-month"
+                    formControlName="dateMonth">
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                  </select>
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    class="form-control date-year"
+                    id="date-year"
+                    formControlName="dateYear">
+
+                  <span class="help-block"
+                  *ngIf="!regestForm.get('dateDay').valid && regestForm.get('dateDay').touched
+                  &&!regestForm.get('dateMonth').valid && regestForm.get('dateMonth').touched
+                  &&!regestForm.get('dateYear').valid && regestForm.get('dateYear').touched"
+                  >Enter your date!</span>
+                </li>
+
+                <li class="li-education">
+                  <label class="second-label" for="education">Education</label>
+                  <select
+                    class="form-control education"
+                    id="education"
+                    formControlName="education">
+                    <option>Primary</option>
+                    <option>Middle</option>
+                  </select>
+                  <span class="help-block"
+                  *ngIf="!regestForm.get('education').valid && regestForm.get('education').touched"
+                  >Please enter education!</span>
+                </li>
+                <li class="li-children">
+                  <label class="second-label" for="children">Children</label>
+                  <select
+                    class="form-control children"
+                    id="children"
+                    formControlName="children">
+                    <option>no one</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <span class="help-block"
+                  *ngIf="!regestForm.get('children').valid && regestForm.get('children').touched"
+                  >Please enter education!</span>
+                </li>
+                <li class="li-region">
+                  <label class="second-label" for="children">Region</label>
+                  <select
+                    class="form-control region"
+                    id="region"
+                    formControlName="region">
+                    <option>Hills</option>
+                    <option>Time Square</option>
+                    <option>Manhattan</option>
+                  </select>
+                  <span class="help-block"
+                  *ngIf="!regestForm.get('district').valid && regestForm.get('district').touched"
+                  >Please enter education!</span>
+                </li>
+                <li class="li-district">
+                  <label class="label-district" for="children">district</label>
+                  <select
+                    class="form-control district"
+                    id="district"
+                    formControlName="district">
+                    <option>Hills</option>
+                    <option>Time Square</option>
+                    <option>Manhattan</option>
+                  </select>
+                  <span class="help-block"
+                        *ngIf="!regestForm.get('district').valid && regestForm.get('district').touched"
+                  >Please enter education!</span>
+                </li>
+                <li class="li-accept">
+                  <input
+                    type="checkbox"
+                    id="accept"
+                    formControlName="accept">
+                  <label for="accept">I Accept</label>
+                </li>
+
+                <li class="group">
+                  <button class="btn btn-primary media-group">Register</button>
+                  <span class="help-block"
+                        *ngIf="formReg">
+                    Please enter all the fields!
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <!--<div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && regestForm.get('image').valid">-->
+              <!--<img [src]="imagePreview" [alt]="regestForm.value.role">-->
+            <!--</div>-->
+            <!--<div>-->
+              <!--<button class="btn btn-primary" type="button" (click)="filePicker.click()">Add Photo</button>-->
+              <!--<input type="file" #filePicker (change)="onImagePicker($event)">-->
+            <!--</div>-->
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

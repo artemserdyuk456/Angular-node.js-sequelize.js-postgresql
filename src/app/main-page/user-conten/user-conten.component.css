@@ -1,0 +1,60 @@
+.btn-danger {
+  position: relative;
+  top: -20px;
+  left: 873px;
+}
+.img-rounded{
+  margin-top: 20px;
+  width: 150px;
+  height: 200px;
+}
+.background-white {
+  margin-top: 40px;
+  height: 200px;
+  background-color: white;
+  background-size: 100%;
+}
+.users-img {
+  margin-top: -235px;
+}
+
+h3 {
+  font-weight: bold;
+}
+h3:first-child {
+  color: #ff7c2e;
+}
+
+p {
+  font-size: 16px;
+}
+
+
+@media (max-width: 992px) {
+  .img-rounded{
+    width: 100px;
+    height: 150px;
+  }
+  .background-white {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 801px) {
+  .background-white {
+    display: none;
+  }
+}
+
+@media (max-width: 641px) {
+  .img-rounded{
+    width: 80px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 525px) {
+  .img-rounded{
+   display: none;
+  }
+}

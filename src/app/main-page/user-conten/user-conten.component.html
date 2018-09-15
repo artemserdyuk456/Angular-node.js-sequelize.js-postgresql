@@ -1,0 +1,62 @@
+<div class="users-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div *ngFor="let user of postUser; let i = index">
+          <div class="col-xs-2 col-sm-2 col-md-2" *ngIf="i < 6">
+            <img
+              *ngIf="user.image !== ''"
+              [src]="user.image"
+              class="img-rounded"
+              alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+      <div class="background-white" *ngIf="hiddenBlock()">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <h3>Dating and find love in Chile</h3>
+              <h3>Looking couple, love or friends in Chile?</h3>
+              <p>DatingChile.cl the perfect place to search and find friends online dating and place.
+                We are the website of Chile`s largest dating and have helped thousands of people to seek and
+              find their ideal partner With more than 900,000 users are dating find what you are looking for!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-sm-12 col-md-12">-->
+      <!--<div *ngFor="let user of postUser">-->
+        <!--<div class="image-preview">-->
+          <!--<img class="image" [src]="user.image" [alt]="user.userName">-->
+        <!--</div>-->
+        <!--<ul class="list-group" >-->
+          <!--<li class="list-group-item">{{ user.id}}</li>-->
+          <!--<li class="list-group-item">{{ user.email}}</li>-->
+          <!--<li class="list-group-item">{{ user.education}}</li>-->
+          <!--<li class="list-group-item">{{ user.userName}}</li>-->
+          <!--<li class="list-group-item">{{ user.password}}</li>-->
+          <!--<li class="list-group-item">{{ user.district}}</li>-->
+          <!--<li class="list-group-item">{{ user.email}}</li>-->
+          <!--<li class="list-group-item">{{ user.gender}}</li>-->
+          <!--<li class="list-group-item">{{ user.location}}</li>-->
+          <!--<li class="list-group-item">{{ user.region}}</li>-->
+          <!--<li class="list-group-item">{{ user.children}}</li>-->
+        <!--</ul>-->
+        <!--<button class="btn btn-danger" (click)="onDelete(user.id)">Delete</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

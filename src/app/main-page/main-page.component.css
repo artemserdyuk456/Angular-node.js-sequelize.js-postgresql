@@ -1,0 +1,36 @@
+.background-color {
+  background-color: #319dd4;
+  min-height: 100vh;
+}
+.background {
+  background-image: url("../../images/dating-hero.jpg");
+  height: 550px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px) {
+  .background {
+    background-size: 180%;
+    height: 450px;
+  }
+}
+@media (max-width: 690px) {
+  .background {
+    background-size: 140%;
+    height: 400px;
+  }
+}
+@media (max-width: 570px) {
+  .background {
+    background-size: 170%;
+    height: 470px;
+  }
+}
+@media (max-width: 520px) {
+  .background {
+    background-size: 368%;
+    height: 595px;
+    background-position: -200px;
+  }
+
+}

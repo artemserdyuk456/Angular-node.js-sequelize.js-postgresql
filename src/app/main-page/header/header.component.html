@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-4">
+      <div class="logo">
+      </div>
+      <div class="the">
+        <span class="logo-theme">Find your ideal</span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-8">
+      <div class="desktop">
+        <form *ngIf="!userIsAuthenticated" [formGroup]="authorizationForm" (ngSubmit)="onSubmit()">
+          <div
+            class="form-authorization"
+            id="header-form-authorization">
+            <div class="form-group">
+              <ul>
+                <li>
+                  <label for="emailLog">If you already have a profile</label>
+                  <input
+                    id="emailLog"
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                    formControlName="email">
+                  <input
+                    type="checkbox"
+                    id="rememberData">
+                    <!--formControlName="rememberData"-->
+
+                  <label for="rememberData">Remember Data</label>
+                </li>
+                <li class="input-password">
+                  <input
+                    type="password"
+                    id="passwords"
+                    class="form-control"
+                    placeholder="Password"
+                    formControlName="password">
+                  <label for="passwords">Did you forget your password?</label>
+                </li>
+                <li>
+                  <button class="btn btn-primary" type="submit">Log in</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+
+        <ul *ngIf="userIsAuthenticated" class="login">
+          <li>
+            <button  class="btn btn-primary log-out" type="button" (click)="onLogout()">Log out</button>
+          </li>
+          <li *ngIf="authFailed">
+            <a  class="user-list" (click)="goToUserList()">User list</a>
+          </li>
+        </ul >
+      </div>
+
+      <div class="mobile">
+        <div class="dropdown">
+          <button  (click)="toToggleForm()" class="btn btn-primary already">
+            Already you have a profile?
+          </button>
+          <div  *ngIf="toggle">
+            <form  [formGroup]="authorizationForm" (ngSubmit)="onSubmit()">
+              <div class="form-group one" >
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  formControlName="email">
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  formControlName="password">
+              </div>
+              <div class="form-group">
+                <input
+                  class="remember-data"
+                  type="checkbox"
+                  id="rememDat">
+                  <!--formControlName="rememberData"-->
+                <label for="rememDat">Remember Data</label>
+              </div>
+              <button type="submit" class="btn btn-primary submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

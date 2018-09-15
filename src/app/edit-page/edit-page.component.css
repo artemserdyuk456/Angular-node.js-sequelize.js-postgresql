@@ -1,0 +1,38 @@
+.btn-primary {
+  width: 250px;
+  background-color: #209734;
+}
+.button, .alert-success {
+  text-align: center;
+}
+.help-block {
+  position: absolute;
+  bottom: -40px;
+  left: 384px;
+  color: red;
+}
+input[type="file"] {
+  display: none;
+}
+.image-preview img{
+  width: auto;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+
+.nav-bar {
+  height: 65px;
+  background-color: #209734;
+}
+.back {
+  border: 1px solid white;
+  margin-top: 9px;
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  width: 50px;
+}
+.date-month-lable, .date-year-lable {
+  visibility: hidden;
+}

@@ -1,0 +1,75 @@
+
+<div class="nav-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div >
+          <button class="btn back" (click)="goToMainPage()"><span class="glyphicon glyphicon-arrow-left"></span></button>
+          <ul class="nav-user-list">
+            <li class="left" *ngIf="userRole === 'Administrator' && userIsAuthenticated">
+                <button class="btn create" (click)="createNewUser()">
+                  <span class="glyphicon glyphicon-plus"></span>
+                  Create user
+                </button>
+            </li>
+            <li class="right">
+              <div class="admin">{{userRole}}:<span>{{fetchUserName}}</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <table class="table table-bordered" >
+        <thead>
+        <tr>
+          <th scope="col">User</th>
+          <th class="th-role" scope="col">User role</th>
+          <th class="th-admin" scope="col">Save changes</th>
+          <th class="th-admin" scope="col">Delete user</th>
+        </tr>
+        </thead>
+        <tbody class="user-list-group" *ngFor="let user of postUser">
+        <tr>
+          <th scope="row">
+            <span>@</span>
+            <a *ngIf="moderAdmin(user.id) " [routerLink]="['/edit', user.id]">{{user.userName}}</a>
+            <p *ngIf="moderAccess(user.id)">{{user.userName}}</p>
+            <!--<div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && createRole.get('image').valid">-->
+              <!--<img [src]="imagePreview" [alt]="createRole.value.role">-->
+            <!--</div>-->
+          </th>
+
+          <td class="form-role">
+            <form id="role-form" [formGroup]="createRole" (ngSubmit)="onSaveChanges(user.id)">
+              <select
+                class="form-control role"
+                id="role"
+                formControlName="role"
+              >
+                <!--&lt;!&ndash;<option [selected]="user.role" [value]="user.role" >{{user.role}}</option>&ndash;&gt;-->
+                <!--<option *ngFor="let key  of optionKey" [selected]="returnKey" [value]="key" >{{key}}</option>-->
+
+                <option [selected]="user.role" [value]="user.role" >{{user.role}}</option>
+                <option value="User" >User</option>
+                <option value="Moderator">Moderator</option>
+                <option value="Administrator">Administrator</option>
+              </select>
+            </form>
+          </td>
+          <td><a type="submit" (click)="onSaveChanges(user.id)">Save Changes</a></td>
+          <td>
+            <p *ngIf="!userIsAuthenticated" >Delete user</p>
+            <a *ngIf="userIsAuthenticated" (click)="onDelete(user.id)">Delete user</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

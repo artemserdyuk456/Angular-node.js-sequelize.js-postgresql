@@ -1,0 +1,190 @@
+label {
+  position: relative;
+  color: #ffffff;
+}
+.sign-up-form {
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 685px;
+}
+#content-form li{
+  display: inline-block;
+  text-align: left;
+}
+.li-user-name, .li-email, .li-password, .li-education, .li-children, .li-district {
+  margin: 10px;
+}
+.form-group {
+  text-align: center;
+
+}
+.password{
+  position: relative;
+  right: 11px;
+}
+.district {
+  position: relative;
+  left: 11px;
+}
+.user-name, .email, .password,.education, .children, .region, .district {
+  width: 300px;
+}
+.date-day, .date-month, .date-year {
+  width: 96px;
+}
+select {
+  height: 34px;
+}
+.li-date-day {
+  margin: 0;
+}
+
+.li-accept {
+  float: left;
+  margin-left: 12px;
+}
+
+.btn-primary {
+  position: relative;
+  margin: 10px;
+  width: 300px;
+  right: -122px;
+  height: 34px;
+  border: none;
+  background-color: #ff7c2e;
+
+}
+.label-password {
+  margin-left: -10px;
+}
+.label-district {
+  margin-left: 10px;
+}
+
+
+.help-block {
+  background-color: papayawhip;
+  margin-left: 195px;
+  height: 35px;
+  border: 1px solid red;
+  position: absolute;
+  color: red;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+
+@media (max-width: 860px) {
+  .sign-up-form {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 710px) {
+  .sign-up-form {
+    width: 500px;
+  }
+  .help-block {
+    margin-left: 85px;
+  }
+  .user-name, .email, .password,.education, .children, .region, .district, .btn-primary {
+    width: 190px;
+  }
+  .date-day, .date-month, .date-year {
+    width: 60px;
+  }
+  .li-accept {
+    float: none;
+    margin-left: 0;
+  }
+  .btn-primary {
+    right: -69px;
+  }
+  .password {
+    right: 0px;
+  }
+
+  .label-password {
+    margin-left: 0px;
+  }
+  .date-day {
+    position: relative;
+    left: 12px;
+  }
+  .label-date-day {
+    left:12px;
+  }
+  .date-month {
+    position: relative;
+    right: 11px;
+  }
+  .date-year {
+    position: relative;
+    left: -10px;
+  }
+  .li-accept {
+    position: relative;
+    right: 56px;
+  }
+}
+@media (max-width: 520px) {
+  .user-name, .email, .btn-primary, .btn-primary {
+    width: 325px;
+  }
+  .label-password {
+    margin-left: 11px;
+  }
+  .password {
+    left: 11px;
+  }
+
+  .label-date-day {
+    left: 19px;
+  }
+  .date-day {
+    position: relative;
+    left: 19px;
+  }
+  .date-day, .date-month, .date-year {
+    width: 50px;
+  }
+  .date-month[_ngcontent-c4] {
+    position: relative;
+    left: -16px;
+  }
+  .date-year[_ngcontent-c4] {
+    position: relative;
+    left: -17px;
+  }
+  .li-accept {
+    position: relative;
+    left: -125px;
+    right: 0;
+  }
+
+
+  .btn-primary {
+    right: 0;
+  }
+  .li-accept {
+    position: relative;
+    left: -122px;
+    right: 0;
+  }
+  .sign-up-form {
+    width: 427px;
+    position: relative;
+    left: -40px;
+  }
+
+  .password, .education, .children, .region, .district {
+    width: 147px;
+  }
+}
+
+
+@media (max-width: 415px) {
+  .sign-up-form {
+
+    left: -60px;
+  }
+}

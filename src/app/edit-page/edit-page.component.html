@@ -1,0 +1,268 @@
+<script src="edit-page.component.ts"></script>
+<div class="nav-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div >
+          <button class="btn back" (click)="goToUserListPage()"><span class="glyphicon glyphicon-arrow-left"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12  col-md-12">
+      <ul class="nav-user-list"></ul>
+      <div>
+        <form [formGroup]="editForm" (ngSubmit)="updateUser()">
+
+          <div class="form-group col-md-12">
+            <div *ngIf="toggleSuccess" class="alert alert-success" role="alert">
+              <h4 class="alert-heading">Update successfully, if you have no window error message!</h4>
+            </div>
+          </div>
+                <div class="form-group col-md-12">
+                  <h3>{{(userGetData.userName)}}</h3>
+                  <div class="image-preview" *ngIf="userGetData.image || imagePreview">
+                    <img class="img-rounded" [src]="imagePreview || userGetData.image" alt="Avatar">
+                  </div>
+                  <div>
+                    <button class="btn btn-primary" type="button" (click)="filePicker.click()">Add Photo</button>
+                    <input type="file" #filePicker (change)="onImagePicker($event)">
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="first-label" for="gender">Gender</label>
+                  <select
+                    class="form-control"
+                    id="gender"
+                    formControlName="gender">
+                    <option
+                      [selected]="userGetData.gender"
+                      [value]="userGetData.gender">
+                      {{userGetData.gender}}</option>
+                    <option  value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label class="second-label" for="lookingFor">I am looking for</label>
+                  <select
+                    class="form-control"
+                    id="lookingFor"
+                    formControlName="lookingFor">
+                    <option
+                      [selected]="userGetData.lookingFor"
+                      [value]="userGetData.lookingFor">
+                      {{userGetData.lookingFor}}</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label class="third-label" for="between">between</label>
+                  <select
+                    class="form-control col-md-6"
+                    id="between"
+                    formControlName="between">
+                    <option
+                      [selected]="userGetData.between"
+                      [value]="userGetData.between">
+                      {{userGetData.between}}</option>
+                    <option value="18-25">18-25</option>
+                    <option value="25-35">25-35</option>
+                    <option value="35-45">35-45</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label class="fourth-label" for="location">living in</label>
+                  <select
+                    class="form-control"
+                    id="location"
+                    formControlName="location">
+                    <option
+                      [selected]="userGetData.location"
+                      [value]="userGetData.location">
+                      {{userGetData.location}}</option>
+                    <option value="madrid">Madrid</option>
+                    <option value="london">London</option>
+                    <option value="paris">Paris</option>
+                  </select>
+                </div>
+
+                  <div class="form-group col-md-6">
+                    <label class="label-user-name" for="user">User name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="user"
+                      [(ngModel)]="userGetData.userName"
+                      formControlName="userName">
+
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="second-label" for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      [(ngModel)]="userGetData.email"
+                      formControlName="email">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="label-password" for="password">Password/New password</label>
+                    <input
+                      type="password"
+                      class="form-control password"
+                      id="password"
+                      formControlName="password">
+                  </div>
+
+                  <div class="form-group col-md-2">
+                    <label class="fourth-label" for="date-day">Date of Birth</label>
+                    <select
+                      class="form-control"
+                      id="date-day"
+                      [(ngModel)]="userGetData.dateDay"
+                      formControlName="dateDay">
+                      <option>01</option>
+                      <option>02</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                      <option>07</option>
+                      <option>08</option>
+                      <option>09</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                      <option>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                      <option>21</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                      <option>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                      <option>21</option>
+                      <option>22</option>
+                      <option>23</option>
+                      <option>24</option>
+                      <option>25</option>
+                      <option>26</option>
+                      <option>27</option>
+                      <option>28</option>
+                      <option>29</option>
+                      <option>30</option>
+                      <option>31</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2" >
+                    <label class="date-month-lable" for="date-month">Date of Birth</label>
+
+                    <select
+                      class="form-control"
+                      id="date-month"
+                      [(ngModel)]="userGetData.dateMonth"
+                      formControlName="dateMonth">
+                      <option>January</option>
+                      <option>February</option>
+                      <option>March</option>
+                      <option>April</option>
+                      <option>May</option>
+                      <option>June</option>
+                      <option>July</option>
+                      <option>August</option>
+                      <option>September</option>
+                      <option>October</option>
+                      <option>November</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label class="date-year-lable" for="date-year">Date of Birth</label>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="date-year"
+                      [(ngModel)]="userGetData.dateYear"
+                      formControlName="dateYear">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label class="second-label" for="education">Education</label>
+                    <select
+                      class="form-control"
+                      id="education"
+                      [(ngModel)]="userGetData.education"
+                      formControlName="education">
+                      <option>Primary</option>
+                      <option>Middle</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="second-label" for="children">Children</label>
+                    <select
+                      class="form-control"
+                      id="children"
+                      [(ngModel)]="userGetData.children"
+                      formControlName="children">
+                      <option>no one</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="second-label" for="children">Region</label>
+                    <select
+                      class="form-control"
+                      id="region"
+                      [(ngModel)]="userGetData.region"
+                      formControlName="region">
+                      <option>Hills</option>
+                      <option>Time Square</option>
+                      <option>Manhattan</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="label-district" for="children">district</label>
+                    <select
+                      class="form-control"
+                      id="district"
+                      [(ngModel)]="userGetData.district"
+                      formControlName="district">
+                      <option>Hills</option>
+                      <option>Time Square</option>
+                      <option>Manhattan</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-12 button">
+                    <button class="btn btn-primary">Update</button>
+                    <!--<a type="submit" (click)="goToUserListPage()">GoTO User LIst</a>-->
+                    <span class="help-block"
+                          *ngIf="formRes">
+                    Please enter all the fields!
+                  </span>
+                  </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
